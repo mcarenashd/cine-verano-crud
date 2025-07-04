@@ -3,11 +3,11 @@
 const fakeApiURL = "http://localhost:3000/movies";
 
 //Cuando se cargue la página necesitamos que se ejecute la función displayMovies que declararemos más adelante, y es la encargada de mostrar las películas.
+//También necesitamos qu cargue la función para agregar películas.
 document.addEventListener("DOMContentLoaded", () => {
   fetch(fakeApiURL)
     .then((res) => res.json())
     .then((movies) => {
-      console.log(movies);
       displayMovies(movies);
     });
 });
@@ -30,6 +30,8 @@ function displayMovies(movies) {
     movieSlide.appendChild(movieCard); //movieCard va a quedar dentro del div ya creado en html movieSlide.
   });
 }
+
+
 
 
 
