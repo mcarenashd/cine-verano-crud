@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+    <title>Cine de Verano</title>
+</head>
+<body>
+    <nav>ESTE VA A SER EL NAV </nav>
+    <div class="info-section">
+        <div class="movie-section">
+            PELÍCULAS
+            <div class="movie-slide" id="movie-slide"></div>
+        </div>
+        <form class="add-movie">
+            <label for="title">Título de la Película:</label><br>
+            <input type="text" id="title" name="title" value="Título"><br>
+
+            <label for="Director">Director:</label><br>
+            <input type="text" id="director" name="director" value="Director"><br>
+
+            <label for="year">Año:</label><br>
+            <input type="text" id="year" name="year" value="Año"><br>
+
+            <label for="country">País:</label><br>
+            <input type="text" id="country" name="country" value="País"><br>
+
+            <label for="genre">Género:</label><br>
+            <input type="text" id="genre" name="genre" value="Género"><br>
+
+            <label for="synopsis">Sinópsis:</label><br>
+            <textarea name="synopsis" rows="10" cols="30"></textarea><br><br>
+
+            <button type="submit" value="Submit">Añadir Película!</button>
+        </form>
+    </div>
+    <script src="services.js"></script>
+</body>
+</html>
