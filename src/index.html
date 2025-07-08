@@ -8,33 +8,36 @@
 </head>
 <body>
     <nav>ESTE VA A SER EL NAV </nav>
-    <div class="info-section">
+        <div class="info-section">
         <div class="movie-section">
             PELÍCULAS
             <div class="movie-slide" id="movie-slide"></div>
         </div>
-        <form class="add-movie">
+        <form class="add-movie" id="movieForm">
             <label for="title">Título de la Película:</label><br>
-            <input type="text" id="title" name="title" value="Título"><br>
+            <input type="text" id="title" name="title" value=""><br>
 
             <label for="Director">Director:</label><br>
-            <input type="text" id="director" name="director" value="Director"><br>
+            <input type="text" id="director" name="director" value=""><br>
 
             <label for="year">Año:</label><br>
-            <input type="text" id="year" name="year" value="Año"><br>
+            <input type="text" id="year" name="year" value=""><br>
 
             <label for="country">País:</label><br>
-            <input type="text" id="country" name="country" value="País"><br>
+            <input type="text" id="country" name="country" value=""><br>
 
             <label for="genre">Género:</label><br>
-            <input type="text" id="genre" name="genre" value="Género"><br>
+            <input type="text" id="genre" name="genre" value=""><br>
 
             <label for="synopsis">Sinópsis:</label><br>
-            <textarea name="synopsis" rows="10" cols="30"></textarea><br><br>
+            <textarea name="synopsis" rows="10" cols="30" id="synopsis"></textarea><br><br>
 
             <button type="submit" value="Submit">Añadir Película!</button>
         </form>
-    </div>
+
+</div>
+    <button type="button" onclick="printMovies()">Cargar Información</button>
+    <section> </section>
     <script src="services.js"></script>
 </body>
 </html>
