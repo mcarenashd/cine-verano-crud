@@ -1,13 +1,13 @@
 {
   "movies": [
     {
+      "id": "1",
       "title": "The Grand Budapest Hotel",
       "director": "Wes Anderson",
       "year": "2014",
       "country": "EEUU",
       "genre": "Comedia",
-      "synopsis": "Un excéntrico conserje y su joven protegido se ven envueltos en una disparatada aventura en un legendario hotel europeo.",
-      "id": "1"
+      "synopsis": "Un excéntrico conserje y su joven protegido se ven envueltos en una disparatada aventura en un legendario hotel europeo."
     },
     {
       "id": "2",
@@ -64,6 +64,24 @@
       "synopsis": "Tres hermanos distanciados emprenden un viaje en tren por la India en busca de reconciliación y autodescubrimiento."
     },
     {
+      "id": "9",
+      "title": "Lady Bird",
+      "director": "Greta Gerwig",
+      "year": 2017,
+      "country": "USA",
+      "genre": "Comedia, Drama",
+      "synopsis": "Una adolescente rebelde navega su último año de secundaria mientras lucha con su madre y sueña con dejar Sacramento."
+    },
+    {
+      "id": "10",
+      "title": "Amélie",
+      "director": "Jean-Pierre Jeunet",
+      "year": 2001,
+      "country": "Francia",
+      "genre": "Comedia, Romance",
+      "synopsis": "Una joven parisina decide cambiar la vida de quienes la rodean con pequeños actos de bondad mientras busca el amor."
+    },
+    {
       "id": "11",
       "title": "Relatos salvajes",
       "director": "Damián Szifron",
@@ -73,13 +91,22 @@
       "synopsis": "Seis historias independientes exploran la venganza y el humor negro en situaciones extremas de la vida moderna."
     },
     {
+      "id": "12",
+      "title": "Juno",
+      "director": "Jason Reitman",
+      "year": 2007,
+      "country": "USA",
+      "genre": "Comedia, Drama",
+      "synopsis": "Una adolescente se enfrenta al embarazo inesperado con una mezcla de humor, inteligencia y decisiones difíciles."
+    },
+    {
       "id": "13",
       "title": "¿Qué he hecho yo para merecer esto?",
       "director": "Pedro Almodóvar",
       "year": 1984,
       "country": "España",
       "genre": "Comedia, Drama",
-      "synopsis": "Gloria es una ama de casa sobrepasada por su caótica familia y su vida rutinaria en un barrio obrero de Madrid. Entre situaciones absurdas y personajes peculiares, lucha por encontrar algo de felicidad en medio del desorden."
+      "synopsis": "Gloria es una ama de casa sobrepasada por su caótica familia y su vida rutinaria en un barrio obrero de Madrid."
     },
     {
       "id": "14",
@@ -88,7 +115,106 @@
       "year": 1983,
       "country": "España",
       "genre": "Comedia, Drama",
-      "synopsis": "Yolanda, una cantante de cabaret, se refugia en un convento muy poco convencional tras ser perseguida por la policía. Allí descubre a un grupo de monjas con extrañas aficiones y mucho sentido del humor negro."
+      "synopsis": "Yolanda, una cantante de cabaret, se refugia en un convento muy poco convencional y lleno de monjas excéntricas."
+    },
+    {
+      "id": "15",
+      "title": "The Lobster",
+      "director": "Yorgos Lanthimos",
+      "year": 2015,
+      "country": "Irlanda, Reino Unido, Grecia",
+      "genre": "Comedia, Ciencia Ficción",
+      "synopsis": "En un futuro distópico, los solteros deben encontrar pareja en 45 días o serán convertidos en animales."
+    },
+    {
+      "id": "16",
+      "title": "Her",
+      "director": "Spike Jonze",
+      "year": 2013,
+      "country": "USA",
+      "genre": "Drama, Ciencia Ficción, Romance",
+      "synopsis": "Un hombre solitario desarrolla una relación emocional con una inteligencia artificial avanzada."
+    },
+    {
+      "id": "17",
+      "title": "Toni Erdmann",
+      "director": "Maren Ade",
+      "year": 2016,
+      "country": "Alemania",
+      "genre": "Comedia, Drama",
+      "synopsis": "Un padre bromista intenta reconectar con su hija ejecutiva a través de un personaje inventado: Toni Erdmann."
+    },
+    {
+      "id": "18",
+      "title": "Submarine",
+      "director": "Richard Ayoade",
+      "year": 2010,
+      "country": "UK",
+      "genre": "Comedia, Drama, Romance",
+      "synopsis": "Un adolescente excéntrico intenta salvar el matrimonio de sus padres y conquistar a su compañera de clase."
+    },
+    {
+      "id": "19",
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "director": "Michel Gondry",
+      "year": 2004,
+      "country": "USA",
+      "genre": "Drama, Romance, Ciencia Ficción",
+      "synopsis": "Una pareja se somete a un procedimiento para borrar los recuerdos de su relación fallida."
+    },
+    {
+      "id": "20",
+      "title": "The Squid and the Whale",
+      "director": "Noah Baumbach",
+      "year": 2005,
+      "country": "USA",
+      "genre": "Comedia, Drama",
+      "synopsis": "Dos hermanos enfrentan la separación de sus padres intelectuales en el Brooklyn de los 80."
+    },
+    {
+      "id": "21",
+      "title": "Moonrise Kingdom",
+      "director": "Wes Anderson",
+      "year": 2012,
+      "country": "USA",
+      "genre": "Comedia, Aventura, Drama",
+      "synopsis": "Dos niños enamorados huyen juntos en una isla, desatando una búsqueda entre los adultos que los rodean."
+    },
+    {
+      "id": "22",
+      "title": "Nebraska",
+      "director": "Alexander Payne",
+      "year": 2013,
+      "country": "USA",
+      "genre": "Comedia, Drama",
+      "synopsis": "Un anciano cree haber ganado un premio millonario y viaja con su hijo hasta Nebraska para reclamarlo."
+    },
+    {
+      "id": "23",
+      "title": "Beginners",
+      "director": "Mike Mills",
+      "year": 2010,
+      "country": "USA",
+      "genre": "Comedia, Drama, Romance",
+      "synopsis": "Un hombre recuerda a su padre, quien salió del clóset tras 44 años de matrimonio, y cómo eso transformó sus vidas."
+    },
+    {
+      "id": "24",
+      "title": "C.R.A.Z.Y.",
+      "director": "Jean-Marc Vallée",
+      "year": 2005,
+      "country": "Canadá",
+      "genre": "Comedia, Drama, Música",
+      "synopsis": "Un joven canadiense de los años 70 navega su identidad sexual en el seno de una familia conservadora."
+    },
+    {
+      "id": "25",
+      "title": "The Station Agent",
+      "director": "Tom McCarthy",
+      "year": 2003,
+      "country": "USA",
+      "genre": "Comedia, Drama",
+      "synopsis": "Un hombre enano que hereda una vieja estación de tren busca la soledad, pero encuentra inesperadas amistades."
     }
   ]
 }

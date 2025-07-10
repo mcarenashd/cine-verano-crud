@@ -2,41 +2,40 @@
 //Creamos una variable llamada URL_API para facilidad si llegara existir un cambio solo sería cambiarlo ahí.
 const URL_API = "http://localhost:3000/movies";
 
-//Cuando se cargue la página necesitamos que se ejecute la función displayMovies que declararemos más adelante, y es la encargada de mostrar las películas.
-//También necesitamos qu cargue la función para agregar películas.
+//Cuando se cargue la página necesitamos que se ejecute la función printMovies que declararemos más adelante, y es la encargada de mostrar las películas.
 document.addEventListener("DOMContentLoaded", () => {
-  // Tu función para mostrar películas:
   printMovies();
 });
 
-//Funcion para Cargar las películas de la base de datos
+//Funcion para cargar las películas de la base de datos API
 async function getAllMovies() {
-  const response = await fetch(URL_API);
-  const movieData = await response.json();
-  console.log(movieData);
-  return movieData;
+  const response = await fetch(URL_API); //Hcemos una petición GET obtener la información de las películas del API
+  const movieData = await response.json(); // .json() transforma los datos en un objeto con el que podemos trabajar en JavaScript
+  return movieData; //Nos devuelve la lista de películas
 }
 
-// METODO PRINT
-//Mostrar las películas en el HTML
-let moviesContainer = document.querySelector("section");
+//PRINT
+//Creamos una función para mostrar las películas en el HTML
+let moviesContainer = document.querySelector("section"); //Seleccionamos el contenedor donde se mostrará la lista de películas. 
 async function printMovies(params) {
-  let movies = await getAllMovies();
-  moviesContainer.innerHTML = "";
-  const movieList = movies.map((movie) => {
+  let movies = await getAllMovies(); //Llamamos a la función que creamos antes y obtenemos la lista de películas de al API
+  moviesContainer.innerHTML = ""; // Permite que el contenedor esté limpio y no empiece a duplicar la creación de las películas. 
+  const movieList = movies.map((movie) => { //Recorremos el array de las películas y agregamos el correspondiente HTML a cada una.
     return (moviesContainer.innerHTML += `<h1>${movie.title}</h1>
         <p>${movie.director}</p>
         <p>${movie.year}</p>
         <p>${movie.country}</p>
         <p>${movie.genre}</p>
         <p>${movie.synopsis}</p>
-        <button onclick="deleteMovie('${movie.id}')">Eliminar</button>
+        <button onclick="deleteMovie('${movie.id}')">Eliminar</button> 
         <button onclick="editMovie('${movie.id}')">Editar</button> `);
+        //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
   });
-  return movieList;
+  return movieList; //Devolvemos la lista generada de películas. 
 }
 
-// DELETE
+// METODO DELETE
+//Creamos una función para elimi
 async function deleteMovie(id) {
   const response = await fetch(`${URL_API}/${id}`, {
     method: "DELETE",
@@ -89,11 +88,12 @@ form.addEventListener("submit", newMovie);
 //Creamos una variable que va a guardar el id de la película a modificar
 let idMovieEdit = null;
 
-//Creamos la función editMovie que se encargará de mostrar el formulario para editar la película y que este encuentre ya pre-cargado con la info de la película
+//Creamos la función editMovie que se encargará de mostrar el formulario de edición y que este encuentre ya pre-cargado con la info de la película
 async function editMovie(id) {
-  idMovieEdit = id; //Se actualiza la variable con el id de la película a actualizar.
-  const response = await fetch(`${URL_API}/${id}`); //Obtenemos los datos de la película que se va a editar.
-  const movie = await response.json(); //Traducción a formato JS.
+  idMovieEdit = id; // Se actualiza la variable con el id de la película a editar.
+  const response = await fetch(`${URL_API}/${id}`); //Obtenemos los datos de la película que se va a editar a través de una petición que hacemos a la API.
+  const movie = await response.json(); //Guardamos la información en una constante llamada movie. y .json() transforma los datos en un objeto que podemos manipular en JavaScript.
+
   //A continuación, vamos a cargar el formulario de edición con los datos de la película que se va a editar.
   document.getElementById("titleEdit").value = movie.title;
   document.getElementById("directorEdit").value = movie.director;
@@ -107,7 +107,6 @@ async function editMovie(id) {
 }
 
 //Ahora creamos la función para editar las películas directamente.
-
 async function updateMovie(e) {
   e.preventDefault();
   //Vamos a crear un nuevo objeto con los datos actualizados de la película.
