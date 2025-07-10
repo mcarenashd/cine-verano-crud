@@ -32,9 +32,30 @@
             <label for="synopsis">Sinópsis:</label><br>
             <textarea name="synopsis" rows="10" cols="30" id="synopsis"></textarea><br><br>
 
-            <button type="submit" value="Submit">Añadir Película!</button>
+            <button type="submit" value="Submit">!Añade tu Película!</button>
         </form>
 
+        <form class="add-movie" id="movieEdit" style="display:none;">
+            <label for="title">Título de la Película:</label><br>
+            <input type="text" id="titleEdit" name="title" value=""><br>
+
+            <label for="Director">Director:</label><br>
+            <input type="text" id="directorEdit" name="director" value=""><br>
+
+            <label for="year">Año:</label><br>
+            <input type="text" id="yearEdit" name="year" value=""><br>
+
+            <label for="country">País:</label><br>
+            <input type="text" id="countryEdit" name="country" value=""><br>
+
+            <label for="genre">Género:</label><br>
+            <input type="text" id="genreEdit" name="genre" value=""><br>
+
+            <label for="synopsis">Sinópsis:</label><br>
+            <textarea name="synopsis" rows="10" cols="30" id="synopsisEdit"></textarea><br><br>
+
+            <button type="submit" value="Submit">!Actualiza tu Película!</button>
+        </form>
 </div>
     <button type="button" onclick="printMovies()">Cargar Información</button>
     <section> </section>
