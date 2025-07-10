@@ -1,13 +1,13 @@
 {
   "movies": [
     {
-      "id": "1",
       "title": "The Grand Budapest Hotel",
       "director": "Wes Anderson",
-      "year": 2014,
-      "country": "USA",
+      "year": "2014",
+      "country": "EEUU",
       "genre": "Comedia",
-      "synopsis": "Un excéntrico conserje y su joven protegido se ven envueltos en una disparatada aventura en un legendario hotel europeo."
+      "synopsis": "Un excéntrico conserje y su joven protegido se ven envueltos en una disparatada aventura en un legendario hotel europeo.",
+      "id": "1"
     },
     {
       "id": "2",
@@ -89,60 +89,6 @@
       "country": "España",
       "genre": "Comedia, Drama",
       "synopsis": "Yolanda, una cantante de cabaret, se refugia en un convento muy poco convencional tras ser perseguida por la policía. Allí descubre a un grupo de monjas con extrañas aficiones y mucho sentido del humor negro."
-    },
-    {
-      "id": "6864",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": ""
-    },
-    {
-      "id": "be99",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": "wertyuio"
-    },
-    {
-      "id": "f65d",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": "dgag"
-    },
-    {
-      "id": "9875",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": "dgagwegfg"
-    },
-    {
-      "id": "da6f",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": "dgagwegfg"
-    },
-    {
-      "id": "9551",
-      "title": "Título",
-      "director": "Director",
-      "year": "Año",
-      "country": "País",
-      "genre": "Género",
-      "synopsis": "dgagwegfg"
     }
   ]
 }

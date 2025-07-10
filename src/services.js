@@ -31,7 +31,7 @@ async function printMovies(params) {
         <p>${movie.genre}</p>
         <p>${movie.synopsis}</p>
         <button onclick="deleteMovie('${movie.id}')">Eliminar</button>
-        <button onclick="movieEdit('${movie.id}')">Eliminar</button> `);
+        <button onclick="editMovie('${movie.id}')">Editar</button> `);
   });
   return movieList;
 }
@@ -56,20 +56,13 @@ async function deleteMovie(id) {
 async function newMovie(event) {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const director = document.getElementById("director").value;
-  const year = document.getElementById("year").value;
-  const country = document.getElementById("country").value;
-  const genre = document.getElementById("genre").value;
-  const synopsis = document.getElementById("synopsis").value;
-
   const newMovie = {
-    title,
-    director,
-    year,
-    country,
-    genre,
-    synopsis,
+    title: document.getElementById("title").value,
+    director: document.getElementById("director").value,
+    year: document.getElementById("year").value,
+    country: document.getElementById("country").value,
+    genre: document.getElementById("genre").value,
+    synopsis: document.getElementById("synopsis").value,
   };
 
   const response = await fetch(URL_API, {
@@ -120,11 +113,11 @@ async function updateMovie(e) {
   //Vamos a crear un nuevo objeto con los datos actualizados de la película.
   const updateMovie = {
     title: document.getElementById("titleEdit").value,
-    director: getElementById("directorEdit").value,
-    year: getElementById("yearEdit").value,
-    country: getElementById("countryEdit").value,
-    genre: getElementById("genreEdit").value,
-    synopsis: getElementById("synopsisEdit").value,
+    director: document.getElementById("directorEdit").value,
+    year: document.getElementById("yearEdit").value,
+    country: document.getElementById("countryEdit").value,
+    genre: document.getElementById("genreEdit").value,
+    synopsis: document.getElementById("synopsisEdit").value,
   };
   //Continuamos con la petición PUT para hacer el UPDATE de las películas.
   const response = await fetch(`${URL_API}/${idMovieEdit}`, {
