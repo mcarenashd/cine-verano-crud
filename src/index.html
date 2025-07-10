@@ -5,15 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <title>Cine de Verano</title>
 </head>
 
 <body>
-    <nav>ESTE VA A SER EL NAV </nav>
+    <nav>CINE DE VERANO &#127958 </nav>
     <div class="info-section">
         <div class="movie-section">
-            PELÍCULAS
-        <div class="movie-slide" id="movie-slide"></div>
+<h1 class="headTitle">📽️ Cartelera de Verano ☀️ </h1>
+            <section class="movieCarousel">
+                <ul>
+                </ul>
+            </section>
         </div>
         <form class="add-movie" id="movieForm">
             <label for="title">Título de la Película:</label><br>
@@ -34,10 +42,11 @@
             <label for="synopsis">Sinópsis:</label><br>
             <textarea name="synopsis" rows="10" cols="30" id="synopsis"></textarea><br><br>
 
-            <button type="submit" value="Submit">!Añade tu Película!</button>
+            <button type="submit" value="Submit">¡Añade tu Película!</button>
         </form>
 
-        <form class="add-movie" id="movieEdit" style="display:none;">
+        <form class="edit-movie" id="movieEdit" style="display:none;">
+            <h1> Edita tu Película</h1>
             <label for="title">Título de la Película:</label><br>
             <input type="text" id="titleEdit" name="title" value=""><br>
 
@@ -58,25 +67,8 @@
 
             <button type="submit" value="Submit">!Actualiza tu Película!</button>
         </form>
-                <h1>CSS carousel single item per page</h1>
-        <ul>
-            <li>
-                <h2>Page 1</h2>
-            </li>
-            <li>
-                <h2>Page 2</h2>
-            </li>
-            <li>
-                <h2>Page 3</h2>
-            </li>
-            <li>
-                <h2>Page 4</h2>
-            </li>
-        </ul>
     </div>
-    <section>
 
-    </section>
     <script src="services.js"></script>
 </body>
 

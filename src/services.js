@@ -16,26 +16,30 @@ async function getAllMovies() {
 
 //PRINT
 //Creamos una función para mostrar las películas en el HTML
-let moviesContainer = document.querySelector("section"); //Seleccionamos el contenedor donde se mostrará la lista de películas. 
+let moviesContainer = document.querySelector("ul"); //Seleccionamos el contenedor donde se mostrará la lista de películas. 
 async function printMovies(params) {
   let movies = await getAllMovies(); //Llamamos a la función que creamos antes y obtenemos la lista de películas de al API
   moviesContainer.innerHTML = ""; // Permite que el contenedor esté limpio y no empiece a duplicar la creación de las películas. 
-  const movieList = movies.map((movie) => { //Recorremos el array de las películas y agregamos el correspondiente HTML a cada una.
-    return (moviesContainer.innerHTML += `<h1>${movie.title}</h1>
-        <p>${movie.director}</p>
-        <p>${movie.year}</p>
-        <p>${movie.country}</p>
-        <p>${movie.genre}</p>
-        <p>${movie.synopsis}</p>
-        <button onclick="deleteMovie('${movie.id}')">Eliminar</button> 
-        <button onclick="editMovie('${movie.id}')">Editar</button> `);
-        //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
-  });
-  return movieList; //Devolvemos la lista generada de películas. 
-}
+  
+  movies.forEach(movie => {
+    const movieItem = document.createElement('li'); //Se va a crear un li para cada movie nueva creada (necesario para el estilo que le estoy haciendo al carrusel)
+    movieItem.innerHTML = `<h1>${movie.title}</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/></svg>
+        <p><strong>Título: </strong>${movie.director}</p>
+        <p><strong>Año: </strong>${movie.year}</p>
+        <p><strong>País: </strong>${movie.country}</p>
+        <p><strong>Género: </strong>${movie.genre}</p>
+        <p><strong>Sinópsis: </strong>${movie.synopsis}</p>
+        <button onclick="deleteMovie('${movie.id}')">Eliminar</button><br> 
+        <button onclick="editMovie('${movie.id}')">Editar</button> `; //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
+      moviesContainer.appendChild(movieItem);
 
+  });
+
+  }
+  
 // METODO DELETE
-//Creamos una función para elimi
+//Creamos una función para eliminar
 async function deleteMovie(id) {
   const response = await fetch(`${URL_API}/${id}`, {
     method: "DELETE",
