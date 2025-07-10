@@ -101,23 +101,49 @@ async function editMovie(id) {
   idMovieEdit = id; //Se actualiza la variable con el id de la película a actualizar.
   const response = await fetch(`${URL_API}/${id}`); //Obtenemos los datos de la película que se va a editar.
   const movie = await response.json(); //Traducción a formato JS.
-//A continuación, vamos a cargar el formulario de edición con los datos de la película que se va a editar.
+  //A continuación, vamos a cargar el formulario de edición con los datos de la película que se va a editar.
   document.getElementById("titleEdit").value = movie.title;
   document.getElementById("directorEdit").value = movie.director;
   document.getElementById("yearEdit").value = movie.year;
   document.getElementById("countryEdit").value = movie.country;
   document.getElementById("genreEdit").value = movie.genre;
   document.getElementById("synopsisEdit").value = movie.synopsis;
-// Ocultamos el formulario de Añadir Películas y visualizamos el de editar películas.
+  // Ocultamos el formulario de Añadir Películas y visualizamos el de editar películas.
   document.getElementById("movieForm").style.display = "none";
   document.getElementById("movieEdit").style.display = "block";
 }
 
-//Ahora creamos la función para editar las películas directamente. 
+//Ahora creamos la función para editar las películas directamente.
 
 async function updateMovie(e) {
   e.preventDefault();
-//Vamos a crear un nuevo objeto con los datos actualizados de la película.
-
-  
+  //Vamos a crear un nuevo objeto con los datos actualizados de la película.
+  const updateMovie = {
+    title: document.getElementById("titleEdit").value,
+    director: getElementById("directorEdit").value,
+    year: getElementById("yearEdit").value,
+    country: getElementById("countryEdit").value,
+    genre: getElementById("genreEdit").value,
+    synopsis: getElementById("synopsisEdit").value,
+  };
+  //Continuamos con la petición PUT para hacer el UPDATE de las películas.
+  const response = await fetch(`${URL_API}/${idMovieEdit}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updateMovie),
+  });
+  if (response.ok) {
+    //Si la respuesta está bien, muestra la lista de libros actualizada, oculta el formulario de edición y regresa el formulario de edición-
+    await printMovies();
+    document.getElementById("movieForm").style.display = "block";
+    document.getElementById("movieEdit").style.display = "none";
+  } else {
+    console.log("error al editar las películas.");
+  }
 }
+
+//Escuchar el envío del formulario.
+const movieEdit = document.getElementById("movieEdit");
+movieEdit.addEventListener("submit", updateMovie);
