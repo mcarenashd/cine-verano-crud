@@ -136,15 +136,6 @@
       "synopsis": "Un hombre solitario desarrolla una relación emocional con una inteligencia artificial avanzada."
     },
     {
-      "id": "17",
-      "title": "Toni Erdmann",
-      "director": "Maren Ade",
-      "year": 2016,
-      "country": "Alemania",
-      "genre": "Comedia, Drama",
-      "synopsis": "Un padre bromista intenta reconectar con su hija ejecutiva a través de un personaje inventado: Toni Erdmann."
-    },
-    {
       "id": "18",
       "title": "Submarine",
       "director": "Richard Ayoade",
@@ -199,13 +190,13 @@
       "synopsis": "Un hombre recuerda a su padre, quien salió del clóset tras 44 años de matrimonio, y cómo eso transformó sus vidas."
     },
     {
-      "id": "24",
       "title": "C.R.A.Z.Y.",
       "director": "Jean-Marc Vallée",
-      "year": 2005,
+      "year": "2005",
       "country": "Canadá",
       "genre": "Comedia, Drama, Música",
-      "synopsis": "Un joven canadiense de los años 70 navega su identidad sexual en el seno de una familia conservadora."
+      "synopsis": "Un joven canadiense de los años 70 navega su identidad sexual en el seno de una familia conservadora.",
+      "id": "24"
     },
     {
       "id": "25",
@@ -215,15 +206,6 @@
       "country": "USA",
       "genre": "Comedia, Drama",
       "synopsis": "Un hombre enano que hereda una vieja estación de tren busca la soledad, pero encuentra inesperadas amistades."
-    },
-    {
-      "id": "d080",
-      "title": "",
-      "director": "",
-      "year": "",
-      "country": "",
-      "genre": "",
-      "synopsis": ""
     }
   ]
 }

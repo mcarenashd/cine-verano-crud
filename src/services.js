@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Funcion para cargar las películas de la base de datos API
 async function getAllMovies() {
-  const response = await fetch(URL_API); //Hcemos una petición GET obtener la información de las películas del API
+  const response = await fetch(URL_API); //Hcemos una petición GET a la API para obtener la información de las todas las películas guardadas en la db. 
   const movieData = await response.json(); // .json() transforma los datos en un objeto con el que podemos trabajar en JavaScript
   return movieData; //Nos devuelve la lista de películas
 }
@@ -20,20 +20,25 @@ let moviesContainer = document.querySelector("ul"); //Seleccionamos el contenedo
 async function printMovies(params) {
   let movies = await getAllMovies(); //Llamamos a la función que creamos antes y obtenemos la lista de películas de al API
   moviesContainer.innerHTML = ""; // Permite que el contenedor esté limpio y no empiece a duplicar la creación de las películas. 
-  
+//Creo constantes de las imágenes que van a ir en las tarjeticas de películas
+  const htmlImhg1 =`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /><i class="fa-solid fa-clapperboard"></i>` //Link a imagen de claqueta
+  const htmlImhg2 =`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /><i class="fa-solid fa-user"></i>` //Link a imagen de claqueta
+  const htmlImhg3 =`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /><i class="fa-solid fa-calendar-days"></i>` //Link a imagen de claqueta
+  const htmlImhg4 =`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /><i class="fa-solid fa-earth-americas"></i>` //Link a imagen de claqueta
+  const htmlImhg5 =`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /><i class="fa-solid fa-masks-theater"></i>` //Link a imagen de claqueta
+
+//Recorremos el array de movies, creamos una li para cada película y así poderlo desplegar el en carrusel. 
   movies.forEach(movie => {
     const movieItem = document.createElement('li'); //Se va a crear un li para cada movie nueva creada (necesario para el estilo que le estoy haciendo al carrusel)
-    movieItem.innerHTML = `<h1>${movie.title}</h1>
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="m160-800 80 160h120l-80-160h80l80 160h120l-80-160h80l80 160h120l-80-160h120q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800Zm0 240v320h640v-320H160Zm0 0v320-320Z"/></svg>
-        <p><strong>Título: </strong>${movie.director}</p>
-        <p><strong>Año: </strong>${movie.year}</p>
-        <p><strong>País: </strong>${movie.country}</p>
-        <p><strong>Género: </strong>${movie.genre}</p>
+    movieItem.innerHTML = `<h1> ${htmlImhg1} ${movie.title}</h1>
+        <p><strong>${htmlImhg2}   Director: </strong>${movie.director}</p>
+        <p><strong>${htmlImhg3}   Año: </strong>${movie.year}</p>
+        <p><strong>${htmlImhg4}   País: </strong>${movie.country}</p>
+        <p><strong>${htmlImhg5} Género: </strong>${movie.genre}</p>
         <p><strong>Sinópsis: </strong>${movie.synopsis}</p>
         <button onclick="deleteMovie('${movie.id}')">Eliminar</button><br> 
         <button onclick="editMovie('${movie.id}')">Editar</button> `; //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
-      moviesContainer.appendChild(movieItem);
-
+      moviesContainer.appendChild(movieItem); //Añadimos cada película al contenedor
   });
 
   }

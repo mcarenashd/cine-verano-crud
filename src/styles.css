@@ -1,38 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  margin: 1%;
-  background-color: #fafafa;
+  background: linear-gradient(
+    135deg,
+    #fd9797a8 0%,
+    #fad68aae 50%,
+    #48dafb9e 100%
+  );
+  /* min-height: 100vh; */
+  /* font-family: "Open Sans", sans-serif; */
+  position: relative;
 }
-/*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_overflow/CSS_carousels*/
-ul {
-  width: 100vw;
-  height: 100%;
+.info-section {
   padding: 10px;
-
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  text-align: center;
 }
 
-li {
-  list-style-type: none;
 
-  flex: 0 0 280px;
+.headTitle {
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2.5em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 30px 0;
+}
 
-  height: 100%;
-  width: 200px;
-  background-color: rgba(255, 166, 0, 0.305);
-  border: 1px solid #e8e8e8;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: left;
-  scroll-snap-align: start;
+
+.movieCarousel {
+  margin: 30px 0;
+  position: relative;
+}
+/*Carrusel de películas */
+/*Fuente: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_overflow/CSS_carousels*/
+ul {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2rem;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+
+}
+
+ul::-webkit-scrollbar {
+  height: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  border-radius: 10px;
+}
+li {
+  list-style: none;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-style: "Alumni Sans Pinstripe", sans-serif;
+  margin: 1.3rem;
+}
+li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 li:nth-child(even) {
@@ -56,27 +98,31 @@ ul::column::scroll-marker:target-current {
   background-color: black;
 }
 
-.movieCarousel {
-  height: 100%;
-  width: 100%;
-}
-
 li h1 {
-  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-family: "Bebas Neue", sans-serif, ;
   font-weight: bolder;
+  margin-bottom: 5%;
+  text-align: center;
+}
+svg{
+  text-align: center;
 }
 li p {
   font-family: "Alumni Sans Pinstripe", sans-serif;
+  margin-bottom: 5%;
+  line-height: 1.5;
+  font-size: larger;
+  color: black;
 }
 
 h1 {
-  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: bolder;
   color: #2e2e2e;
 }
 nav {
   display: flex;
-  font-family: "Poppins", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   background-color: #f9e1839e;
   height: 2.7vw;
   width: 100vw;
@@ -88,21 +134,34 @@ nav {
 }
 
 button {
-  background-color: #f9e183c8;
-  border-color: #f9e183c8;
-  font-family: "Poppins", sans-serif;
+
+  font-family: "TikTok Sans", sans-serif;
   font-size: 17px;
   padding: 1%;
+  display: flex;
+  background-color: #facc15;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #fbbf24;
+  transform: scale(1.05);
 }
 
 form {
   width: 100%;
-  margin: 0 0 auto;
+  /* margin: 0 0 auto; */
   font-family: "Alumni Sans Pinstripe", sans-serif;
-  font-size: 16px;
+  font-size: larger;
 }
 
-form.add-movie, form.edit-movie {
+form.add-movie,
+form.edit-movie {
   display: flex;
   flex-direction: column;
   max-width: 500px;
@@ -114,11 +173,14 @@ form.add-movie, form.edit-movie {
   gap: 0px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 3px;
   margin-bottom: 1px;
@@ -126,10 +188,20 @@ form input, form textarea {
   border-radius: 4px;
   font-family: inherit;
   font-size: 16px;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 form label {
   margin-bottom: 0%;
   font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background-color: #f9e183c8;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  color: black;
+}
+.headTitle {
+  text-align: center;
 }
