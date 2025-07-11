@@ -30,11 +30,11 @@ async function printMovies(params) {
 //Recorremos el array de movies, creamos una li para cada película y así poderlo desplegar el en carrusel. 
   movies.forEach(movie => {
     const movieItem = document.createElement('li'); //Se va a crear un li para cada movie nueva creada (necesario para el estilo que le estoy haciendo al carrusel)
-    movieItem.innerHTML = `<h1> ${htmlImhg1} ${movie.title}</h1>
-        <p><strong>${htmlImhg2}   Director: </strong>${movie.director}</p>
+    movieItem.innerHTML = `<h1 class="titulo-pelicula"> ${htmlImhg1} ${movie.title}</h1>
+        <p class ="upper-case"><strong>${htmlImhg2}   Director: </strong>${movie.director}</p>
         <p><strong>${htmlImhg3}   Año: </strong>${movie.year}</p>
-        <p><strong>${htmlImhg4}   País: </strong>${movie.country}</p>
-        <p><strong>${htmlImhg5} Género: </strong>${movie.genre}</p>
+        <p class ="upper-case"><strong>${htmlImhg4}   País: </strong>${movie.country}</p>
+        <p class ="upper-case"><strong>${htmlImhg5} Género: </strong>${movie.genre}</p>
         <p><strong>Sinópsis: </strong>${movie.synopsis}</p>
         <div class = "movie-buttons">
         <button onclick="deleteMovie('${movie.id}')">Eliminar</button><br> 
@@ -85,6 +85,7 @@ async function newMovie(event) {
 
   if (response.ok) {
     await printMovies();
+    document.getElementById("movieForm").reset();
   } else {
     console.log(`Error al cargar el libro`);
   }
