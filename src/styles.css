@@ -41,12 +41,12 @@ ul {
   scroll-snap-type: x mandatory;
   gap: 2rem;
   padding: 20px 0;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 
 }
 
 ul::-webkit-scrollbar {
-  height: 8px;
+  height: 12px;
 }
 
 ul::-webkit-scrollbar-track {
@@ -146,6 +146,9 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+    justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 button:hover {
@@ -182,8 +185,9 @@ select {
 form input,
 form textarea {
   width: 100%;
-  padding: 3px;
-  margin-bottom: 1px;
+  padding: 1px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-family: inherit;
@@ -192,7 +196,7 @@ form textarea {
 }
 
 form label {
-  margin-bottom: 0%;
+  margin-bottom: 0px;
   font-weight: bold;
 }
 
@@ -205,3 +209,16 @@ footer {
 .headTitle {
   text-align: center;
 }
+
+.movie-buttons,.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.movie-buttons button {
+  flex: 1;
+  max-width: 120px;
+}
+

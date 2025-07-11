@@ -36,8 +36,10 @@ async function printMovies(params) {
         <p><strong>${htmlImhg4}   País: </strong>${movie.country}</p>
         <p><strong>${htmlImhg5} Género: </strong>${movie.genre}</p>
         <p><strong>Sinópsis: </strong>${movie.synopsis}</p>
+        <div class = "movie-buttons">
         <button onclick="deleteMovie('${movie.id}')">Eliminar</button><br> 
-        <button onclick="editMovie('${movie.id}')">Editar</button> `; //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
+        <button onclick="editMovie('${movie.id}')">Editar</button>
+        </div> `; //Los botones de Eliminar y Editar los agregamos cuando estamos creando las funciones correspondientes
       moviesContainer.appendChild(movieItem); //Añadimos cada película al contenedor
   });
 
